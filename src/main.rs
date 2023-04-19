@@ -35,8 +35,8 @@ enum Direction {
 }
 
 fn calc_rotation(delta_x: i32) -> (Direction, i32) {
-    // Ik kan niet de drone 100% laten draaien, want dan draait ie hoogstwaarschijnlijk te ver, dus pak ik maar de helft.
-    // De drone gebruikt 0-3600 in plaats van 0-360 graden, dus daarom doe ik het keer 4.
+    // Ik kan niet de drone 100% laten draaien, want dan draait ie hoogstwaarschijnlijk zo ver dat de gezichten uit frame gaan, dus pak ik maar de helft.
+    // De drone gebruikt 0-3600 in plaats van 0-360 graden, dus daarom doe ik het keer 10.
     let rotation = (0.05 * delta_x as f32) as i32 * 10;
 
     if rotation <= 0 {
